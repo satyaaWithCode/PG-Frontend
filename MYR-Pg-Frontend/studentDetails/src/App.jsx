@@ -13,7 +13,9 @@ import { ToastContainer } from "react-toastify";
 function App() {
 
   // trigger netlify build
+// Remove-Item -Recurse -Force node_modules, package-lock.json
 
+//dir-for confirm deleted or not 
   return (
     <>
     <Routes>

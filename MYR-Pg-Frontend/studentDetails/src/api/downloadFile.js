@@ -3,7 +3,7 @@
 
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = "https://pg-backend-87c6.onrender.com";
 
 const downloadFile = async (path, downloadAsName) => {
   try {

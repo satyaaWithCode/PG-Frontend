@@ -1,7 +1,7 @@
 // src/api/authApi.js
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = "https://pg-backend-87c6.onrender.com";
 
 export const registerUser = async (userData) => {
   const res = await axios.post(`${BASE_URL}/auth/register`, userData);

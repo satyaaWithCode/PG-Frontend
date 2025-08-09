@@ -3,7 +3,7 @@ import SockJS from "sockjs-client/dist/sockjs.min.js";
 import Stomp from "stompjs";
 import { toast } from "react-toastify";
 
-const WEBSOCKET_URL = "http://localhost:8080/ws";
+const WEBSOCKET_URL = "https://pg-backend-87c6.onrender.com/ws";
 
 export default function useWebSocket() {
   useEffect(() => {

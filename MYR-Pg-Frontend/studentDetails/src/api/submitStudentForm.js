@@ -19,7 +19,7 @@ const submitStudentForm = async (formData, aadharFile) => {
       ...(token && { Authorization: `Bearer ${token}` }),
     };
 
-    const response = await axios.post("http://localhost:8080/api/pg", form, {
+    const response = await axios.post("https://pg-backend-87c6.onrender.com/api/pg", form, {
       headers,
       withCredentials: true,
     });

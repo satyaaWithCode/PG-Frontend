@@ -4,7 +4,7 @@ import axios from "axios";
 export default function deleteStudent(id) {
   const token = localStorage.getItem("token");
 
-  return axios.delete(`http://localhost:8080/api/pg/students/${id}`, {
+  return axios.delete(`https://pg-backend-87c6.onrender.com/api/pg/students/${id}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },

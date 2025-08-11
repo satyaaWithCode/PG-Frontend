@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -10,7 +8,117 @@ import {
   Wallet,
   Star,
 } from "lucide-react";
-import houseImg from "../assets/house.jpg";
+
+const HouseSVG = () => (
+  <svg
+    width="100%"
+    height="384" // same as h-96 (24rem)
+    viewBox="0 0 64 64"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="rounded-3xl shadow-lg"
+  >
+    <defs>
+      <linearGradient
+        id="roofGradient"
+        x1="32"
+        y1="8"
+        x2="32"
+        y2="28"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#ec4899" />
+        <stop offset="1" stopColor="#db2777" />
+      </linearGradient>
+      <linearGradient
+        id="wallGradient"
+        x1="32"
+        y1="28"
+        x2="32"
+        y2="56"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#a78bfa" />
+        <stop offset="1" stopColor="#7c3aed" />
+      </linearGradient>
+      <linearGradient
+        id="doorGradient"
+        x1="44"
+        y1="44"
+        x2="44"
+        y2="56"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#f472b6" />
+        <stop offset="1" stopColor="#db2777" />
+      </linearGradient>
+      <linearGradient
+        id="windowGradient"
+        x1="20"
+        y1="40"
+        x2="20"
+        y2="48"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#c4b5fd" />
+        <stop offset="1" stopColor="#8b5cf6" />
+      </linearGradient>
+    </defs>
+
+    {/* Roof */}
+    <path
+      d="M12 28 L32 8 L52 28 Z"
+      fill="url(#roofGradient)"
+      stroke="#a21caf"
+      strokeWidth="1.5"
+      strokeLinejoin="round"
+    />
+
+    {/* Walls */}
+    <rect
+      x="12"
+      y="28"
+      width="40"
+      height="28"
+      fill="url(#wallGradient)"
+      stroke="#5b21b6"
+      strokeWidth="1.5"
+      rx="3"
+      ry="3"
+    />
+
+    {/* Door */}
+    <rect
+      x="40"
+      y="44"
+      width="8"
+      height="12"
+      fill="url(#doorGradient)"
+      stroke="#9d174d"
+      strokeWidth="1.5"
+      rx="1.5"
+      ry="1.5"
+    />
+    {/* Door knob */}
+    <circle cx="46" cy="50" r="0.8" fill="#4b044e" />
+
+    {/* Window */}
+    <rect
+      x="16"
+      y="40"
+      width="8"
+      height="8"
+      fill="url(#windowGradient)"
+      stroke="#7c3aed"
+      strokeWidth="1.2"
+      rx="1"
+      ry="1"
+    />
+    {/* Window panes */}
+    <line x1="16" y1="44" x2="24" y2="44" stroke="#6d28d9" strokeWidth="0.8" />
+    <line x1="20" y1="40" x2="20" y2="48" stroke="#6d28d9" strokeWidth="0.8" />
+  </svg>
+);
 
 const WelcomePage = () => {
   const navigate = useNavigate();
@@ -39,14 +147,15 @@ const WelcomePage = () => {
 
       {/* Hero Section */}
       <header className="pt-32 px-6 md:px-20 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-20">
-        {/* Left Image */}
-        <div className="md:w-1/2 relative rounded-3xl shadow-2xl overflow-hidden transform hover:scale-110 transition-transform duration-700 ease-in-out cursor-pointer group">
-          <img
-            src={houseImg}
-            alt="PG House"
-            className="w-full h-96 object-cover rounded-3xl filter brightness-90 group-hover:brightness-110 transition-all duration-700"
-          />
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-indigo-700 via-indigo-900 to-transparent opacity-70 group-hover:opacity-50 transition-opacity duration-700" />
+        {/* Left SVG Image */}
+        <div
+          className="md:w-1/2 relative rounded-3xl shadow-2xl overflow-hidden transform hover:scale-110 transition-transform duration-700 ease-in-out cursor-pointer group"
+          aria-label="House illustration"
+          role="img"
+          tabIndex={0}
+        >
+          <HouseSVG />
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-indigo-700 via-indigo-900 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-700" />
           <div className="absolute inset-0 rounded-3xl border-4 border-indigo-400 pointer-events-none animate-pulse" />
         </div>
 
